@@ -5,7 +5,7 @@
 Setting up Puppet certificates
 =================================
 
-Run in your Puppet agent to generate a certificate for the Puppet Server to sign:
+1 - Run in your Puppet agent to generate a certificate for the Puppet Server to sign:
 
 .. code-block:: console
 
@@ -15,7 +15,7 @@ Run in your Puppet agent to generate a certificate for the Puppet Server to sign
 
    You will see a message like this:  ``Exiting; no certificate found and waitforcert is disabled``
 
-Log into to your Puppet Server, and list the certificates that need approval:
+2 - Log into to your Puppet Server, and list the certificates that need approval:
 
 .. code-block:: console
 
@@ -23,13 +23,13 @@ Log into to your Puppet Server, and list the certificates that need approval:
 
 It should output a list with your node’s hostname.
 
-Approve the certificate, replacing ``hostname.example.com`` with your agent's node name:
+3 - Approve the certificate, replacing ``hostname.example.com`` with your agent's node name:
 
 .. code-block:: console
 
    # puppet cert sign hostname.example.com
 
-Back on the Puppet agent node, run the puppet agent again:
+4 - Back on the Puppet agent node, run the puppet agent again:
 
 .. code-block:: console
 

@@ -2,8 +2,8 @@
 
 .. _setup_puppet:
 
-Set up Puppet
-============================
+Install Puppet
+==============
 
 Before we get started with Puppet, confirm the following network requirements are met:
 
@@ -15,6 +15,7 @@ Before we get started with Puppet, confirm the following network requirements ar
     .. toctree::
         :maxdepth: 1
 
-        install-puppet-master.rst
+        install-puppet-server.rst
         install-puppet-agent.rst
         setup-puppet-certificates.rst
+        install-puppet-db.rst
