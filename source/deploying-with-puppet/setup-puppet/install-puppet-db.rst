@@ -2,8 +2,8 @@
 
 .. _install_puppet_db:
 
-PuppetDB installation
-=====================
+PuppetDB installation (Optional)
+================================
 
 .. warning:: Some of these steps may be outdated. If it is not necessary to install, continue in the next section. 
 

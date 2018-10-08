@@ -9,7 +9,7 @@ Setting up Puppet certificates
 
 .. code-block:: console
 
-   # puppet agent -t
+   # /opt/puppetlabs/bin/puppet agent -t
 
 .. note:: 
 
@@ -19,7 +19,7 @@ Setting up Puppet certificates
 
 .. code-block:: console
 
-   # puppet cert list
+   # /opt/puppetlabs/bin/puppet cert list
 
 It should output a list with your node’s hostname.
 
@@ -27,12 +27,12 @@ It should output a list with your node’s hostname.
 
 .. code-block:: console
 
-   # puppet cert sign hostname.example.com
+   # /opt/puppetlabs/bin/puppet cert sign hostname.example.com
 
 4 - Back on the Puppet agent node, run the puppet agent again:
 
 .. code-block:: console
 
-   # puppet agent -t
+   # /opt/puppetlabs/bin/puppet agent -t
 
 .. note:: Remember that private network DNS is a prerequisite for a successful certificate signing.

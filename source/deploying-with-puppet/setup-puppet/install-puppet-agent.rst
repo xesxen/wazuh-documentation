@@ -16,9 +16,9 @@ Installation on CentOS/RHEL/Fedora
 
    # rpm -ivh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
 
-.. code-block:: console
-
 2 - Install the "puppet-agent" package. 
+
+.. code-block:: console
 
    # yum -y install puppet-agent
 
@@ -55,19 +55,49 @@ Installation on Debian/Ubuntu
 
 .. note:: The releases supported by the manifest to install Wazuh are as follows: 
 
-      Ubuntu: **precise | trusty | vivid | wily | xenial | yakketi**
+      Ubuntu: **precise | trusty | vivid | wily | xenial | yakketi | artful | bionic**
 
       Debian: **jessie | wheezy | stretch | sid**
   
 
 
-Configuration
-^^^^^^^^^^^^^
+Configure Hosts
+---------------
+
+We must make sure that our Puppet server is accessible, we must have our hostname attached to our IP address. For example, on a Ubuntu 18 agent we add the Puppet server.
+
+.. code-block:: console
+
+  root@ubuntu18:/home/ubuntu# cat /etc/hosts
+  . . .
+  192.168.1.57    puppet-server
+  # The following lines are desirable for IPv6 capable hosts
+  . . .
+
+
+
+Puppet agent Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1 - Add the server value to the ``[main]`` section of the node’s ``/etc/puppetlabs/puppet/puppet.conf`` file, replacing ``puppet.example.com`` with your Puppet Server’s FQDN::
 
    [main]
    server = puppet.example.com
+
+Example:
+
+.. code-block:: console
+
+  root@ubuntu18:/home/ubuntu# cat /etc/puppetlabs/puppet/puppet.conf
+  # This file can be used to override the default puppet settings.
+  # See the following links for more details on what settings are available:
+  # - https://puppet.com/docs/puppet/latest/config_important_settings.html
+  # - https://puppet.com/docs/puppet/latest/config_about_settings.html
+  # - https://puppet.com/docs/puppet/latest/config_file_main.html
+  # - https://puppet.com/docs/puppet/latest/configuration.html
+  [main]
+  server = puppet-server
+
 
 2 - Enable the Puppet service:
 
